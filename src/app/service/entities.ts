@@ -1,24 +1,25 @@
-export class weather_dates {
+export class fetchData {
     constructor(
-        public latitude: number,
-        public longitude: number,
-        public generationtime_ms: number,
-        public elevation: number,
-        public timezone: string,
-        public timezone_abbreviation: string,
-        public hourly_units: hourly_units,
-        public hourly: hourly,
-        public daily_units: daily_units,
-        public daily: daily,
+        public data: dataEntity
     ) { }
 }
-
+export interface dataEntity {
+    latitude: number,
+    longitude: number,
+    generationtime_ms: number,
+    elevation: number,
+    timezone: string,
+    timezone_abbreviation: string,
+    hourly_units: hourly_units,
+    hourly: hourly,
+    daily_units: daily_units,
+    daily: daily,
+}
 interface hourly_units {
     time: string,
     relativehumidity_2m: string,
     direct_radiation: string,
 }
-
 interface hourly {
     time: string[],
     relativehumidity_2m: number[],
@@ -36,3 +37,4 @@ interface daily {
     temperature_2m_max: number[],
     temperature_2m_min: number[]
 }
+
